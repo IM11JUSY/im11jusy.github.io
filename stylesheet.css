@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Alfa Slab';
+    src: url('subset-AlfaSlab-Regular.woff2') format('woff2'),
+        url('subset-AlfaSlab-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
