@@ -12,76 +12,96 @@
     content="Abdülkerim , Yaren Berra'nın Apo'su">
     <link href="stylesheet.css" rel="stylesheet">
 <style> 
-        @font-face 
-        {
+    @font-face 
+    {
         font-family: 'Alfa Slab';
         src: url('subset-AlfaSlab-Regular.woff2') format('woff2'),
             url('subset-AlfaSlab-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
-        }
-        body {
+    }
+    body 
+    {
         font-family: 'Alfa Slab', serif;
-        }
-        .cerceve
+    }
+    .cerceve
+    {
+        border: 3px solid rgb(42, 42, 196);
+        border-radius:40px;
+    }
+    .cercevepembe
+    {
+        border: 5px solid rgb(230, 15, 216);
+        border-radius: 20px;
+        width: 500px;
+    }
+    @media (max-width: 768px) 
+    {
+                
+        h1 
         {
-            border: 3px solid rgb(42, 42, 196);
-           border-radius:40px;
+            font-size: 26px;
         }
-        .cercevepembe
+
+        h2 
+        {
+            font-size: 20px;
+        }
+
+        h4
+        {
+            font-size: 20px;  
+            width: auto;
+        }
+        .cercevepembe 
         {
             border: 5px solid rgb(230, 15, 216);
-            border-radius: 20px;
-            width: 500px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
         }
-            @media (max-width: 768px) 
-            {
-                
-                h1 {
-                    font-size: 26px;
-                }
-
-                h2 {
-                    font-size: 20px;
-                }
-
-                .cerceve {
-                    padding: px;
-                    
-                }
-                h4{
-                  font-size: 20px;  
-                  width: auto;
-                }
-                .cercevepembe
-                {
-                    padding: 8px;
-                   
-
-                }
-            }
+        .container 
+        {
+            width: 100%;
+            max-width: 500px; /* masaüstü */
+            text-align: center;
+        }
+        img
+        {
+            max-width: %100;
+            height: auto;
+        }
+    }
+    body 
+    {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
 </style>
 </head>
 <body>
    
-    <center>
+    <div class="container">
        <h1 > HOŞGELDİNİİİİZZ </h1>
         <h2>❤️❤️❤️</h2>
         <br><br>
         <audio src="lv_0_20260110215632.mp3"controls class="cerceve";></audio>
         <br>
-        <img src="1463.jpg" width="500px" alt="Polis karakolunun ora" > 
+        <img  src="1463.jpg"  alt="Polis karakolunun ora" > 
         <h4>Benzer kombinleri yapmaya çalıştığımız ilk zamanlar.</h4>
         <br> 
-        <img src="1464.jpg" width="500px" alt=""> 
+        <img src="1464.jpg"  alt=""> 
         <br> 
-        <img src="1465.jpg" width="500px" alt="">
+        <img  src="1465.jpg"  alt="">
         <h4>İlk sen yapmak istemiştin "couple avt" :) </h4>
         <h4>Bende o zaman seni sevmiştim, hep seveceğimde ama korkuyodum konu sen olunca böyle oluyo malesef dbdb.</h4>
         <h4 class="cercevepembe" style="color: rgb(230, 15, 216);" >He ben korkak erkek istemem diyosanız siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
-        
-    </center> 
+   </div>
+    
 
 </body>
 </html>
