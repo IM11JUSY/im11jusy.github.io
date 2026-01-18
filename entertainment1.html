@@ -80,11 +80,67 @@
             width: 300px;
         }
     }
-      
+    .button 
+    {
+        position: relative;
+        top: -650px;   /* yukarı çıkar */
+        left: 330px;   /* sağa kaydırır */
+    }
+    /* Ortak popup ayarları */
+    #passwordPopup, #imagePopup
+    {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+    .box
+    {
+        background-color: antiquewhite;
+        padding: 30px 90px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+    }
+    .box input
+    {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    #error
+    {
+        color: red;
+        display: none;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    #imagePopup img
+    {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 12px;
+    }
+    #closeImg
+    {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: blue;
+        cursor: pointer;
+    }
+    
+    
+    
 </style>
 </head>
 <body>
-<center>
+    <center>
     
        <h1 > HOŞGELDİNİİİİZZ </h1>
         <h2>❤️❤️❤️</h2>
@@ -100,8 +156,62 @@
         <h4>İlk sen yapmak istemiştin "couple avt" :) </h4>
         <h4>Bende o zaman seni sevmiştim, hep seveceğimde ama korkuyodum konu sen olunca böyle oluyo malesef dbdb.</h4>
         <h4 class="cercevepembe" style="color: rgb(230, 15, 216);" >He ben korkak erkek istemem diyosanız siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
-   
-</center> 
+        <button style="padding: 15px 5px;" class="button" id="openBtn" >Mesajlarımız</button>
+        <div id="passwordPopup">
+            <div class="box">
+                <h3>Şifreyi Alayım</h3>
+                <input type="password" id="passwordInput" placeholder="Şifremiz">
+                <button id="sumbitPassword">Göster</button>
+                <div id="error">Yanlış şifre, tekrar deneyin.</div>
+            </div>
+        </div>
+        
+        
+       
+        <div id="imagePopup">
+            <span id="closeImg">X</span>
+            <img src="wp ilk.jpg" alt="!Bazı Mesajlar!">
+            <img src="wp iki.jpg" alt="!Bazı Mesajlar!">
+            <img src="wp üç.jpg" alt="!Bazı Mesajlar!">
+            <img src="wp dört.jpg" alt="!Bazı Mesajlar!">
+            <img src="wp beş.jpg" alt="!Bazı Mesajlar!">
+        </div>
+    </center>
+    <script>
+        const correctPassword = "Sadece o";
+        const openBtn=document.getElementById("openBtn");
+        const passwordPopup=document.getElementById("passwordPopup");
+        const imagePopup=document.getElementById("imagePopup");
+        const sumbitPassword=document.getElementById("sumbitPassword");
+        const passwordInput=document.getElementById("passwordInput");
+        const error =document.getElementById("error");
+        const closeImg=document.getElementById("closeImg"); 
 
+
+        openBtn.onclick=()=>
+        {
+            passwordPopup.style.display="flex";
+            passwordInput.value="";
+            error.style.display="none";
+        };
+        
+        sumbitPassword.onclick=()=>
+        {
+           
+            if(passwordInput.value===correctPassword)
+            {
+                passwordPopup.style.display="none";
+                imagePopup.style.display="flex";
+            }
+            else
+            {
+                error.style.display="block";
+            }
+        };
+        closeImg.onclick=()=>
+        {
+            imagePopup.style.display="none";
+        };
+    </script>
 </body>
 </html>
