@@ -84,7 +84,7 @@
     {
         position: relative;
         top: -650px;   /* yukarı çıkar */
-        left: 330px;   /* sağa kaydırır */
+        left: 370px;   /* sağa kaydırır */
     }
     /* Ortak popup ayarları */
     #passwordPopup, #imagePopup
@@ -119,23 +119,52 @@
         font-size: 15px;
         margin-top: 15px;
     }
-    #imagePopup img
+    #imagePopup 
     {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 12px;
+       
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+
     }
     #closeImg
     {
         position: absolute;
-        top: 20px;
+        top: 14px;
         right: 20px;
-        font-size: 32px;
+        font-size: 30px;
         color: blue;
         cursor: pointer;
     }
-    
-    
+    #galleryImg
+    {
+        max-width: 90%;
+        max-height: 80%;
+        border: 5px solid rgb(43, 144, 181);
+        border-radius: 10px;
+    }
+    .nav
+    {
+        position: absolute;
+        font-size: 40px;
+        background: none;
+        border: none;
+        color: rgb(43, 144, 181);
+        cursor: pointer;
+        user-select: none;
+    }
+    #prev
+    {
+        left: 20px;
+    }
+    #next
+    {
+        right: 20px;
+    }
     
 </style>
 </head>
@@ -169,12 +198,10 @@
         
        
         <div id="imagePopup">
-            <span id="closeImg">X</span>
-            <img src="wp ilk.jpg" alt="!Bazı Mesajlar!">
-            <img src="wp iki.jpg" alt="!Bazı Mesajlar!">
-            <img src="wp üç.jpg" alt="!Bazı Mesajlar!">
-            <img src="wp dört.jpg" alt="!Bazı Mesajlar!">
-            <img src="wp beş.jpg" alt="!Bazı Mesajlar!">
+            <span id="closeImg">✕</span>
+            <button id="prev" class="nav"><:</button>
+            <img id="galleryImg" src="wp ilk.jpg" alt="!Bazı Mesajlar!">
+            <button id="next" class="nav">:></button>
         </div>
     </center>
     <script>
@@ -186,8 +213,21 @@
         const passwordInput=document.getElementById("passwordInput");
         const error =document.getElementById("error");
         const closeImg=document.getElementById("closeImg"); 
+        const galleryImg=document.getElementById("galleryImg");
+        const prevBtn=document.getElementById("prev");
+        const nextBtn=document.getElementById("next");
 
-
+        const images=
+        [
+            "wp ilk.jpg",
+            "wp iki.jpg",
+            "wp üç.jpg",
+            "wp dört.jpg",
+            "wp beş.jpg",
+            "wp altı.jpg",
+            "wp yedi.jpg"
+        ];
+        let currentIndex = 0;
         openBtn.onclick=()=>
         {
             passwordPopup.style.display="flex";
@@ -207,6 +247,16 @@
             {
                 error.style.display="block";
             }
+        };
+        next.onclick=()=>
+        {
+            currentIndex=(currentIndex + 1) % images.length;
+            galleryImg.src=images[currentIndex];
+        };
+        prev.onclick=()=>
+        {
+            currentIndex=(currentIndex - 1 + images.length) % images.length;
+            galleryImg.src=images[currentIndex];
         };
         closeImg.onclick=()=>
         {
