@@ -40,7 +40,7 @@
     {
         width: 650px;
     }
-    @media (max-width: 768px) 
+    @media (max-width: "768px")
     {
                 
         h1 
@@ -79,7 +79,33 @@
             max-width: "%100";
             width: 300px;
         }
+        #imagePopup 
+        {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
     }
+
+        #imagePopup img 
+        {
+            max-width: 90vw;
+            max-height: 65vh;
+            object-fit: contain;
+        }
+
+        .nav 
+        {
+            font-size: 28px;
+            padding: 8px 12px;
+        }
+
+        #counter 
+        {
+            bottom: 15px;
+            font-size: 13px;
+        }
+    }
+
     .button 
     {
         position: relative;
@@ -87,7 +113,7 @@
         left: 370px;   /* sağa kaydırır */
     }
     /* Ortak popup ayarları */
-    #passwordPopup, #imagePopup
+    #passwordPopup
     {
         display: none;
         position: fixed;
@@ -128,6 +154,7 @@
         background: rgba(0,0,0,0.85);
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         z-index: 9999;
 
     }
@@ -165,6 +192,16 @@
     {
         right: 20px;
     }
+    #counter
+    {
+        position: absolute;
+        bottom: 25px;
+        color: white;
+        font-size: 14px;
+        background: rgba(0,0,0,0.5);
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
     
 </style>
 </head>
@@ -195,12 +232,13 @@
             </div>
         </div>
         
-        
+       
        
         <div id="imagePopup">
             <span id="closeImg">✕</span>
             <button id="prev" class="nav"><:</button>
-            <img id="galleryImg" src="wp ilk.jpg" alt="!Bazı Mesajlar!">
+            <img id="galleryImg" src="wp ilk.jpg" alt="!Bazı Mesajlar! dbdb">
+            <div id="counter"></div>
             <button id="next" class="nav">:></button>
         </div>
     </center>
@@ -216,7 +254,8 @@
         const galleryImg=document.getElementById("galleryImg");
         const prevBtn=document.getElementById("prev");
         const nextBtn=document.getElementById("next");
-
+        const counter=document.getElementById("counter");
+        
         const images=
         [
             "wp ilk.jpg",
@@ -225,9 +264,14 @@
             "wp dört.jpg",
             "wp beş.jpg",
             "wp altı.jpg",
-            "wp yedi.jpg"
+            "wp yedi.jpg",
+            "wp 19.01.26 karyağmadanönekigece.jpg",
+            "wp sekiz.jpg",
+            "wp dokuz.jpg",
+            "wp on.jpg"
         ];
         let currentIndex = 0;
+        updateImage();
         openBtn.onclick=()=>
         {
             passwordPopup.style.display="flex";
@@ -248,20 +292,26 @@
                 error.style.display="block";
             }
         };
-        next.onclick=()=>
+        next.onclick = () => 
         {
-            currentIndex=(currentIndex + 1) % images.length;
-            galleryImg.src=images[currentIndex];
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
         };
-        prev.onclick=()=>
+
+        prev.onclick = () => 
         {
-            currentIndex=(currentIndex - 1 + images.length) % images.length;
-            galleryImg.src=images[currentIndex];
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
         };
         closeImg.onclick=()=>
         {
             imagePopup.style.display="none";
         };
+        function updateImage()
+        {
+            galleryImg.src=images[currentIndex];
+            counter.innerText=`${currentIndex + 1} / ${images.length}`;
+        }
     </script>
 </body>
 </html>
