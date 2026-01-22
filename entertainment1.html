@@ -171,7 +171,9 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            z-index: 9999;
+            display: flex;
+            max-width: 100%;
+            content: 0.7;
 
         }
         #closeImg
@@ -237,12 +239,12 @@
         <h4  style="width: 500px; color: goldenrod;" >İlk sen yapmak istemiştin "couple avt" :) </h4>
         <h4 style="width: 500px;" >Bende o zaman seni sevmiştim, hep seveceğimde ama korkuyodum konu biz olunca böyle oluyo malesef dbdb.</h4>
         <h4  class="cercevepembe" style="color: rgb(230, 15, 216); font-style: italic;" >He ben korkak erkek istemem diyosanız siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
-         <div id="passwordPopup"> 
+         
         <button  style="padding: 15px 5px;" class="button comfortaa" id="openBtn" >Mesajlarımız</button>
-            <div class="box">
+            <div id="passwordPopup"> <div class="box">
                 <h3>Şifreyi Alayım</h3>
                 <input type="password" id="passwordInput" placeholder="Şifremiz">
-                <button id="sumbitPassword">Göster</button>
+                <button class="comfortaa" id="sumbitPassword">Göster</button>
                 <div id="error">Yanlış şifre, tekrar deneyin.</div>
             </div>
         </div>
@@ -259,9 +261,6 @@
         <video width="500px" src="badboys videosu.mp4"controls></video>
         
         
-        
-        
-       
        
         <div id="imagePopup">
             <span id="closeImg">✕</span>
