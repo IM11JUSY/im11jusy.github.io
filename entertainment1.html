@@ -10,7 +10,13 @@
     content="Yaren Berra,Abdülkerim,jusy,bestiax">
     <meta name="author"
     content="Abdülkerim , Yaren Berra'nın Apo'su">
-    <link href="stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa&family=Gravitas+One&display=swap" rel="stylesheet">
+
+
+
     <link rel="preload" as="image" href="wp 19.01.26 karyağmadanönekigece.jpg">
     <link rel="preload" as="image" href="wp ilk.jpg">
     <link rel="preload" as="image" href="wp iki.jpg">
@@ -23,219 +29,215 @@
     <link rel="preload" as="image" href="wp dokuz.jpg">
     <link rel="preload" as="image" href="wp on.jpg">
     
-<style> 
-    @font-face 
-    {
-        font-family: 'Alfa Slab';
-        src: url('subset-AlfaSlab-Regular.woff2') format('woff2'),
-            url('subset-AlfaSlab-Regular.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-    body 
-    {
-        font-family: 'Alfa Slab', serif;
-    }
-    .cerceve
-    {
-        border: 3px solid rgb(42, 42, 196);
-        border-radius:40px;
-    }
-    .cercevepembe
-    {
-        border: 5px solid rgb(230, 15, 216);
-        border-radius: 10px;
-        width: 500px;
-    }
-    h4 
-    {
-        width: 650px;
-    }
-    @media (max-width: "768px")
-    {
-                
-        h1 
-        {
-            font-size: 26px;
-        }
+    <style> 
 
-        h2 
+        .comfortaa
         {
-            font-size: 20px;
+            font-family: "Comfortaa", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 323;
+            font-style: normal;
         }
-
-        h4
+        
+        .cerceve
         {
-            font-size: 20px;  
-           width: 500px;
+            border: 3px solid rgb(42, 42, 196);
+            border-radius:40px;
         }
-        .cercevepembe 
+        .cercevepembe
         {
             border: 5px solid rgb(230, 15, 216);
-            border-radius: 15px;
-            
+            border-radius: 10px;
+            width: 490px;
+        }
+        h4 
+        {
+            width: 650px;
+        }
+        @media (max-width: "768px")
+        {
+                    
+            h1 
+            {
+                font-size: 26px;
+            }
+
+            h2 
+            {
+                font-size: 20px;
+            }
+
+            h4
+            {
+                font-size: 20px;  
             width: 500px;
-            margin: 0 auto;
+            }
+            .cercevepembe 
+            {
+                border: 5px solid rgb(230, 15, 216);
+                border-radius: 15px;
+                
+                width: 500px;
+                margin: 0 auto;
+            }
+            
+            
+            img
+            {
+                max-width: "%100";
+                width: 500px;
+                
+            }
+            audio 
+            {
+                max-width: "%100";
+                width: 300px;
+            }
+            #imagePopup 
+            {
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+        }
+
+            #imagePopup img 
+            {
+                max-width: 90vw;
+                max-height: 65vh;
+                object-fit: contain;
+            }
+
+            .nav 
+            {
+                font-size: 28px;
+                padding: 8px 12px;
+            }
+
+            #counter 
+            {
+                bottom: 15px;
+                font-size: 13px;
+            }
         }
         
-        
-        img
+
+        .button 
         {
-            max-width: "%100";
-            width: 500px;
-            
+            position: relative;
+            top: -650px;   /* yukarı çıkar */
+            left: 320px;   /* sağa kaydırır */
         }
-        audio 
+        /* Ortak popup ayarları */
+        #passwordPopup
         {
-            max-width: "%100";
-            width: 300px;
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color:  rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .box
+        {
+            background-color: antiquewhite;
+            padding: 30px 90px;
+            border-radius: 12px;
+            width: 70%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .box input
+        {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        
+        }
+        #error
+        {
+            color: red;
+            display: none;
+            font-size: 15px;
+            margin-top: 15px;
         }
         #imagePopup 
         {
-            width: 100vw;
-            height: 100vh;
-            padding: 0;
-    }
+        
+            display: none;
+            position: fixed;
+            inset: 0;
+            background:  rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
 
-        #imagePopup img 
-        {
-            max-width: 90vw;
-            max-height: 65vh;
-            object-fit: contain;
         }
-
-        .nav 
+        #closeImg
         {
-            font-size: 28px;
-            padding: 8px 12px;
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            font-size: 30px;
+            color: blue;
+            cursor: pointer;
         }
-
-        #counter 
+        #galleryImg
         {
-            bottom: 15px;
-            font-size: 13px;
+            max-width: 90%;
+            max-height: 80%;
+            border: 4px solid rgb(43, 144, 181);
+            border-radius: 10px;
         }
-    }
-    
-
-    .button 
-    {
-        position: relative;
-        top: -650px;   /* yukarı çıkar */
-        left: 320px;   /* sağa kaydırır */
-    }
-    /* Ortak popup ayarları */
-    #passwordPopup
-    {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.85);
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-    }
-    .box
-    {
-        background-color: antiquewhite;
-        padding: 30px 90px;
-        border-radius: 12px;
-        width: 90%;
-        max-width: 300px;
-        text-align: center;
-    }
-    .box input
-    {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    #error
-    {
-        color: red;
-        display: none;
-        font-size: 15px;
-        margin-top: 15px;
-    }
-    #imagePopup 
-    {
-       
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.85);
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 9999;
-
-    }
-    #closeImg
-    {
-        position: absolute;
-        top: 14px;
-        right: 20px;
-        font-size: 30px;
-        color: blue;
-        cursor: pointer;
-    }
-    #galleryImg
-    {
-        max-width: 90%;
-        max-height: 80%;
-        border: 5px solid rgb(43, 144, 181);
-        border-radius: 10px;
-    }
-    .nav
-    {
-        position: absolute;
-        font-size: 40px;
-        background: none;
-        border: none;
-        color: rgb(43, 144, 181);
-        cursor: pointer;
-        user-select: none;
-    }
-    #prev
-    {
-        left: 20px;
-    }
-    #next
-    {
-        right: 20px;
-    }
-    #counter
-    {
-        position: absolute;
-        bottom: 25px;
-        color: white;
-        font-size: 14px;
-        background: rgba(0,0,0,0.5);
-        padding: 6px 12px;
-        border-radius: 20px;
-    }
-    
-</style>
+        .nav
+        {
+            position: absolute;
+            font-size: 40px;
+            background: none;
+            border: none;
+            color: rgb(43, 144, 181);
+            cursor: pointer;
+            user-select: none;
+        }
+        #prev
+        {
+            left: 20px;
+        }
+        #next
+        {
+            right: 20px;
+        }
+        #counter
+        {
+            position: absolute;
+            bottom: 25px;
+            color:blue;
+            font-size: 14px;
+            background: rgba(0,0,0,0.5);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+            </style>
 </head>
-<body>
+<body class="comfortaa">
     <center>
     
-       <h1 > HOŞGELDİNİİİİZZ </h1>
+       <h1> HOŞGELDİNİİİİZZ </h1>
         <h2>❤️❤️❤️</h2>
         <br><br>
         <audio src="lv_0_20260110215632.mp3"controls class="cerceve";></audio>
         <br>
         <img width="500px"  src="1463.jpg"  alt="Polis karakolunun ora" > 
-        <h4 style="width: 500px;" >Benzer kombinleri yapmaya çalıştığımız ilk zamanlar.</h4>
+        <h4 style="width: 500px; color: goldenrod;" >Benzer kombinleri yapmaya çalıştığımız ilk zamanlar.</h4>
         <br> 
         <img width="500px" src="1464.jpg"  alt=""> 
         <br> 
         <img width="500px" src="1465.jpg"  alt="">
-        <h4 style="width: 500px;" >İlk sen yapmak istemiştin "couple avt" :) </h4>
+        <h4  style="width: 500px; color: goldenrod;" >İlk sen yapmak istemiştin "couple avt" :) </h4>
         <h4 style="width: 500px;" >Bende o zaman seni sevmiştim, hep seveceğimde ama korkuyodum konu sen olunca böyle oluyo malesef dbdb.</h4>
-        <h4 class="cercevepembe" style="color: rgb(230, 15, 216);" >He ben korkak erkek istemem diyosanız siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
-        <button style="padding: 15px 5px;" class="button" id="openBtn" >Mesajlarımız</button>
+        <h4  class="cercevepembe" style="color: rgb(230, 15, 216); font-style: italic;" >He ben korkak erkek istemem diyosanız siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
+        <button  style="padding: 15px 5px;" class="button ; comfortaa" id="openBtn" >Mesajlarımız</button>
         <div id="passwordPopup">
             <div class="box">
                 <h3>Şifreyi Alayım</h3>
@@ -244,6 +246,20 @@
                 <div id="error">Yanlış şifre, tekrar deneyin.</div>
             </div>
         </div>
+        <br>
+        <img width="500px" src="flex oturma.jpg" alt="">  
+        <h4 style="width: 500px; color: goldenrod;">İlk tanıştığımızda arkadaş iken. Seni; böyle afk bekleyip arkada matematik ödevini yapıyodum hudjıksol (Random'a bak aw)</h4>
+        <br>
+        <img width="500px" src="karYB.jpeg" alt="">
+        <h4 style="width: 500px; color: goldenrod;" >Göründüğü kadar kolay değil 😊 baya Y B falan doluydu oralar kalpler vardı dbdb </h4>
+        <br>
+        <img width="500px" src="enerji içeceği.jpg" alt=""> 
+        <br>
+        <h3>⬇️SONUÇ⬇️</h3>
+        <video width="500px" src="badboys videosu.mp4"controls></video>
+        
+        
+        
         
        
        
@@ -254,6 +270,7 @@
             <div id="counter"></div>
             <button id="next" class="nav">:></button>
         </div>
+        
     </center>
     <script>
         const correctPassword = "Sadece o";
@@ -281,7 +298,8 @@
             "wp 19.01.26 karyağmadanönekigece.jpg",
             "wp sekiz.jpg",
             "wp dokuz.jpg",
-            "wp on.jpg"
+            "wp on.jpg",
+            "wp onbir.jpg"
         ];
         let currentIndex = 0;
         updateImage();
