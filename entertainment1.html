@@ -17,17 +17,8 @@
 
 
 
-    <link rel="preload" as="image" href="wp 19.01.26 karyağmadanönekigece.jpg">
-    <link rel="preload" as="image" href="wp ilk.jpg">
-    <link rel="preload" as="image" href="wp iki.jpg">
-    <link rel="preload" as="image" href="wp üç.jpg">
-    <link rel="preload" as="image" href="wp dört.jpg">
-    <link rel="preload" as="image" href="wp beş.jpg">
-    <link rel="preload" as="image" href="wp altı.jpg">
-    <link rel="preload" as="image" href="wp yedi.jpg">
-    <link rel="preload" as="image" href="wp sekiz.jpg">
-    <link rel="preload" as="image" href="wp dokuz.jpg">
-    <link rel="preload" as="image" href="wp on.jpg">
+   
+    
     
     <style> 
 
@@ -222,6 +213,14 @@
             </style>
 </head>
 <body class="comfortaa">
+    <div id="images" style="display: none;">
+        <img src="/secure-image.php?id=1" >
+        <img src="/secure-image.php?id=2" >
+        <img src="/secure-image.php?id=3" >
+        <img src="/secure-image.php?id=4">
+        <img src="/secure-image.php?id=5" >
+        <img src="/secure-image.php?id=6" >
+    </div>
     <center>
     
        <h1> HOŞGELDİNİİİİZZ </h1>
@@ -239,13 +238,13 @@
         <h4 style="width: 500px;" >Bende o zaman seni sevmiştim, hep seveceğimde ama korkuyodum konu biz olunca böyle oluyo malesef dbdb.</h4>
         <h4  class="cercevepembe" style="color: rgb(230, 15, 216); font-style: italic;" >He ben korkak erkek istemem diyosanız, siz nasıl isterseniz öyle olurum efenim :> 💖</h4> 
          
-        <button  style="padding: 15px 5px;" class="button comfortaa" id="openBtn" >Mesajlarımız</button>
+        <button  style="padding: 15px 5px; color: antiquewhite; background-color: rgba(204, 19, 19, 0.859); " class="button comfortaa" id="openBtn" >Mesajlarımız</button>
        
         <div id="passwordPopup">
             <div class="box">
-                <h3>Şifreyi Alayım</h3>
+                <h3 style="color: rgba(204, 19, 19, 0.859) ;" >Şifreyi Alayım</h3>
                 <input type="password" id="passwordInput" placeholder="Şifremiz">
-                <button id="sumbitPassword">Göster</button>
+                <button class="comfortaa" style="padding: 7px 8px; background-color: rgba(204, 19, 19, 0.859); color: antiquewhite;" id="sumbitPassword">Göster</button>
                 <div id="error">Yanlış şifre, tekrar deneyin.</div>
             </div>
         </div>
@@ -261,7 +260,6 @@
         <br>
         <h3>⬇️SONUÇ⬇️</h3>
         <video width="500px" src="badboys videosu.mp4"controls></video>
-        
         
        
         <div id="imagePopup">
@@ -300,7 +298,16 @@
             "wp sekiz.jpg",
             "wp dokuz.jpg",
             "wp on.jpg",
-            "wp onbir.jpg"
+            "wp onbir.jpg",
+            "wp 24 öyle bir gece yusifi.jpg",
+            "wp ocak 24 öyle bi gece.jpg",
+            "wp salaklıklarımı niye ss aldın dediği zaman.jpg",
+            "wp salak dediği için kızıyorum.jpg",
+            "wp kızdıktan sonrası.jpg",
+            "wp oyuncaklarım.jpg",
+            "wp tosun paşa öncesi.jpg",
+            "wp öpüşen çoçuk fotosu attığında tosun paşa.jpg",
+            "wp öpüşen çocukları sorguladığımız zaman.jpg"
         ];
         let currentIndex = 0;
         updateImage();
@@ -322,6 +329,7 @@
             else
             {
                 error.style.display="block";
+                imagePopup.style.display="none";
             }
         };
         next.onclick = () => 
@@ -345,5 +353,6 @@
             counter.innerText=`${currentIndex + 1} / ${images.length}`;
         }
     </script>
+
 </body>
 </html>
