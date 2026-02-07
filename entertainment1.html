@@ -14,8 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa&family=Gravitas+One&display=swap" rel="stylesheet">
-    <link rel="preload" as="video" href="DihihiNida.mp4"> 
-    <link rel="preload" as="video" href="badboys videosu.mp4">
 
    
     
@@ -115,7 +113,7 @@
         .button 
         {
             position: relative;
-            top: -630px;   /* yukarı çıkar */
+            top: -670px;   /* yukarı çıkar */
             left: 330px;   /* sağa kaydırır */
         }
         /* Ortak popup ayarları */
@@ -128,6 +126,7 @@
             justify-content: center;
             align-items: center;
             z-index: 999;
+            
         }
         .box
         {
@@ -143,6 +142,7 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+           /* border-radius: 30px; */
         
         }
         #error
@@ -259,13 +259,25 @@
         <img width="500px" src="enerji içeceği.jpg" alt=""> 
         <br>
         <h3>⬇️SONUÇ⬇️</h3>
-        <video width="500px" src="badboys videosu.mp4"controls></video>
+        <video preload="metadata" width="500px" src="badboys videosu.mp4"controls></video>
         <br>
         <h3 style="color: goldenrod;">Daha çektiğimiz ççooookkk şey olsun bitanem.</h3>
-        
-        <video width="500px" controls src="DihihiNida.mp4"></video>
+        <img width="500px" src="flex motor foto3.jpg" alt="">
+        <h4 style="color: goldenrod; width: 500px;">Hasımların seni yerim dediği Yaren Berra</h4>
+        <img width="500px" src="flex motor foto2.jpg" alt="">
+        <h4 style="color: goldenrod; width: 500px;">Suikastçı manit, Mavi kombini değiştirmiştik çok eğleniyoduk kombin başta komikti</h4>
+        <img width="500px" src="flex motor foto1.jpg" alt="">
+        <br> 
+        <h4 style="color: goldenrod; width: 500px;">HIIINIIINININI</h4>
+        <video preload="metadata" width="500px" controls src="DihihiNida.mp4"></video>
         <br>
         <h3 style="color: goldenrod;">ÇOOOK TATLIIIII YA ufdksl </h3>
+        
+       
+
+
+
+
         <div id="imagePopup">
             <span id="closeImg">✕</span>
             <button id="prev" class="nav"><:</button>
@@ -303,6 +315,7 @@
             "wp dokuz.jpg",
             "wp on.jpg",
             "wp onbir.jpg",
+            
             "wp 24 öyle bir gece yusifi.jpg",
             "wp ocak 24 öyle bi gece.jpg",
             "wp salaklıklarımı niye ss aldın dediği zaman.jpg",
@@ -312,6 +325,7 @@
             "wp tosun paşa öncesi.jpg",
             "wp öpüşen çoçuk fotosu attığında tosun paşa.jpg",
             "wp öpüşen çocukları sorguladığımız zaman.jpg"
+            
         ];
         let currentIndex = 0;
         updateImage();
